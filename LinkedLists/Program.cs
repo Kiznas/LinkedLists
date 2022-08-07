@@ -474,6 +474,33 @@ namespace LinkedLists
             }
         }
 
+        public void AddFront(IEnumerable<T> itemss)
+            {
+            foreach (var item in itemss)
+            {
+                AddFront(item);
+
+            }
+        }
+
+        public void AddBack(IEnumerable<T> itemss)
+        {
+            foreach (var item in itemss)
+            {
+                AddBack(item);
+            }
+
+        }
+
+        public void AddByIndex(int index, IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                AddByIndex(item, index);
+            }
+        }
+
+
         public IEnumerator<T> GetEnumerator()
         {
             Node<T> temp = _root;
@@ -495,15 +522,15 @@ namespace LinkedLists
     {
         static void Main(string[] args)
         {
-
+            int[] itemss = new int[] { 1, 3, 5, 7, 9 };
             MyLinkedList<int> items = new MyLinkedList<int>();
-            items.AddFront(110);
-            items.AddFront(320);
-            items.AddFront(320);
-            items.AddFront(4120);
-            items.AddFront(320);
+            items.AddFront(10);
+            items.AddFront(20);
+            items.AddFront(30);
+            items.AddFront(40);
+            items.AddByIndex(1, itemss);
             items.AddFront(50);
-            items.RemoveByValueAll(320);
+            items.AddFront(60);
             foreach (var item in items)
             {
                 Console.Write(item);
